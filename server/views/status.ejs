@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Explore - Status</title>
+	<link rel="stylesheet" href="css/status.css">
+	<link rel="shortcut icon" type="image/gif" href="img/odv-icon.gif">
+  </head>
+    
+  <body>
+  <h2>Explore Status</h2>
+	<div id="ControlBlock">
+  <hr>
+	<p>
+		Port: <input type="text" id="Port" style="width:7%;" value="" /> &emsp; &emsp;
+		<button id='btnGetStatus' onClick="onBtnGetStatus();">Get Detailed Status</button>
+		<button id='btnNotification' onClick="onBtnNotification();">Send Notification</button>
+		<button id='btnShutdown' onClick="onBtnShutdown();" style="color:red;">Shutdown</button>
+		<button id='btnDownload' onClick="onBtnDownload();">Download Activity Logs</button>
+	</p>
+	<p>
+	  <textarea id="TextArea" style="width:100%;height:100px;"></textarea>
+	</p>
+  <hr>
+	</div><!-- ControlBlock -->
+  <%- statusStr %>
+	<script type="text/javascript">let isLocalHost=<%= isLocalHost %>; </script>
+	<script type="text/javascript">let usedPorts=[<%- usedPorts %>]; </script>
+	<script type="text/javascript">let downloadFilePath='<%- downloadFilePath %>'; </script>
+	<script type="text/javascript">let sessionId='<%- sessionId %>'; </script>
+	<script type="text/javascript">let wsUriBase='<%- wsUriBase %>'; </script>
+	<script type="text/javascript" src="js/status.js"></script>
+  </body>
+
+</html>

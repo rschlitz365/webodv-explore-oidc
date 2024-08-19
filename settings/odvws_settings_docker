@@ -1,0 +1,77 @@
+
+[DIVA]
+BathymetryFileName = GEBCO_2023_6x6min_Global.nc
+EnforceNonnegativity = 0
+MaxDivaThreadCount = 8
+PoormanErrorFactor = 12.5
+ScaleLengthFactor = 0.75
+SignalToNoiseRatio = 50
+UseSectionBathymetryPolygon = 1
+
+[Font]
+fontItalic = 1
+fontName = FreeSans
+fontScaleFactor = 1
+fontStrikeOut = 0
+fontUnderline = 0
+fontWeight = 3
+nativePSFontName = Arial-Bold
+txtFontPtSize = 12
+
+[Geometry]
+Canvas-Height = 1358
+Canvas-Width = 1920
+StatDock-Width = 454
+Window-Height = 1157
+Window-Left = 222
+Window-Top = 62
+Window-Width = 1735
+showMaximized = 0
+
+[Highlighting]
+
+[Import]
+CNVBinAveragingBinSize = 1
+CNVDoBinAveraging = 0
+CNVDoSplitUpDownCasts = 1
+StationBreakPositionTolerance = 0.1
+StationBreakTimeTolerance = 1
+WODShortCruiseLabels = 1
+
+[Program Commands]
+BrowserCommand = firefox
+ViewerCommand = gedit
+
+[Recent]
+
+[Recent DlgShows]
+MsgNoValidStation = 2024-02-20T07:51:05
+
+[Recent Files]
+
+[Setup]
+CheckForUpdatesDate = 2020-06-18T09:11:38
+ExtraSidebarURL1 = 
+ExtraSidebarURL2 = 
+InstallCopyVersion = 
+ODVHOME = /home/webodvx/odvapp/
+ODVHOST = webodv-host
+ODVUSER = webodvx
+ODVUserDir = /home/webodvx/ODV/
+
+[Utility Files]
+Etopo2File = /home/webodvx/ODV/bathymetry/ETOPO1_6x6min_Global.nc
+Gebco1File = /home/webodvx/ODV/bathymetry/GEBCO_2023_6x6min_Global.nc
+
+[WebODV]
+ServerRootDir = /home/webodvx/server/
+
+[Website]
+FileRootURL = https://odv.awi.de/fileadmin/user_upload/odv/
+URL = https://odv.awi.de
+VocabRootURL = http://vocab.nerc.ac.uk/collection/
+
+[Websockets]
+CertificateCrtFile = 
+CertificateKeyFile = 
+SecureMode = 0

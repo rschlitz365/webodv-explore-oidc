@@ -1,0 +1,29 @@
+services:
+  webodvx:
+   image: rschlitz365/webodvx_fe:latest
+   #image: webodvx_fe:latest
+   #image: webodvx:latest
+   tty: true
+   #restart: always
+   ports:
+    - 3000:3000
+   volumes:
+    - /home/rschlitz/Documents/ODV:/home/webodvx/ODV:rw
+    - /home/rschlitz/webodvx/data:/home/webodvx/data:rw
+   environment:
+    EXPLORE_DEPLOYMENT_NAME: ${EXPLORE_DEPLOYMENT_NAME}
+    EXPLORE_ADMIN_PASSWORD: ${EXPLORE_ADMIN_PASSWORD}
+    EXPLORE_CONTAINER_IP: ${EXPLORE_CONTAINER_IP}
+    EXPLORE_DATA_ROOT_PATH: ${EXPLORE_DATA_ROOT_PATH}
+    EXPLORE_ROOT_URL: ${EXPLORE_ROOT_URL}
+    EXPLORE_WSURI_BASE: ${EXPLORE_WSURI_BASE}
+    ODVWS_RUN_CMD: ${ODVWS_RUN_CMD}
+    ODVWS_SETTINGS_FILE: ${ODVWS_SETTINGS_FILE}
+    OIDC_ISSUER: ${OIDC_ISSUER}
+    OIDC_AUTHORIZATION_ENDPOINT: ${OIDC_AUTHORIZATION_ENDPOINT}
+    OIDC_TOKEN_ENDPOINT: ${OIDC_TOKEN_ENDPOINT}
+    OIDC_USERINFO_ENDPOINT: ${OIDC_USERINFO_ENDPOINT}
+    OIDC_REDIRECT_URI: ${OIDC_REDIRECT_URI}
+    OIDC_CLIENT_ID: ${OIDC_CLIENT_ID}
+    OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET}
+    

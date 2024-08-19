@@ -1,0 +1,6 @@
+.env
+.vscode
+doc
+server/node_modules
+server/var
+settings/.env*

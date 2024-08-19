@@ -1,0 +1,100 @@
+:root
+{
+    --page-bck-color: rgb(86, 116, 146);
+    --appborder-color: #ccc;
+    --page-text-color: #eaeaea;
+}
+
+body
+{
+    margin: 10px 40px 0px 40px;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+    line-height: 1.35;
+    font-size: 14px;
+    color:var(--page-text-color);
+    background-color: var(--page-bck-color);
+}
+
+
+#btnDownload
+{ float: right; }
+
+/**** trees ****/
+
+.TreeViewBox
+{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+
+.TreeTitle
+{
+    font-size: 14px;
+    padding: 0px 0px 16px 16px;
+    -padding: 0px 0px 0px 16px;
+    margin: -12px 0px 0px 0px;
+}
+
+.TreeViewDiv
+{
+    overflow-y: auto;
+}
+
+.TreeView
+{
+    font-size: 14px;
+    margin: 0px 0px 0px -14px;
+}
+
+.TreeView li
+{
+    padding: 3px 0 3px 0;
+    -cursor: pointer; 
+}
+
+.TreeView, .tree-nested-list
+{
+    list-style-type: none;
+}
+
+.TreeView li.tree-item-node
+{
+    font-style: italic;
+}
+
+.tree-group-node
+{
+    font-weight: bold;
+    cursor: pointer; 
+    user-select: none;
+}
+
+.tree-group-node::before
+{
+    display: inline-block;
+    content: "\203A";
+    margin-right: 6px;
+}
+
+.tree-group-node-open::before
+{
+    transform: rotate(90deg); 
+}
+
+.tree-item-node
+{
+    margin-right: 10px;
+    -cursor: pointer; 
+}
+
+.tree-nested-list
+{
+    display: none;
+}
+
+.tree-nested-list-open
+{
+    margin-left: -20px;
+    display: block;
+}

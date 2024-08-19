@@ -1,0 +1,35 @@
+:root
+{
+    --page-bck-color: rgb(86, 116, 146);
+    --appborder-color: #ccc;
+    --page-text-color: #eaeaea;
+}
+
+body
+{
+    margin: 10px 40px 0px 40px;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+    line-height: 1.35;
+    font-size: 14px;
+    color:var(--page-text-color);
+    background-color: var(--page-bck-color);
+}
+
+section 
+{
+	padding-top: 1px;
+	text-align: center;
+}
+
+a.button
+{
+	padding: 13px 45px;
+	font-size: 24px;
+	font-weight: 500;
+	color: white;
+	border-radius: 5px;
+	background: #d83f45;
+	text-decoration: none;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Explore</title>
+	<link rel="stylesheet" href="css/explore.css">
+	<link rel="shortcut icon" type="image/gif" href="img/odv-icon.gif">
+    </head>
+    
+    <body>
+	<noscript>Your browser does not support JavaScript!</noscript>
+
+	<div id="GridContainer">
+
+		<div id="TitleBar">
+    	</div>
+	    
+		<div id="TextBody">
+			<p>This site lets you explore many popular environmental datasets using 
+				the <i>ODV-online</i> browser tool. If you have used the <i>Ocean Data View</i>
+				software before, you will feel at home instantly. If you are a new 
+				user see the <a href="https://odv.awi.de/fileadmin/user_upload/odv/docs//ODV-online_getting_started.pdf" 
+				target="ODV-online-help"><i>ODV-online</i> help document</a> or the 
+				<a href="https://odv.awi.de/documentation/" target="ODV-online-help">
+				ODV documents</a>. By using this site, you consent to our 
+				<a href="html/usage-agreement.html" target="ODV-online-help" >Usage Agreement</a>.
+			</p>
+			<p>Browse the tree structures below, rest the mouse over a dataset for a 
+				brief description, click on a dataset to open the dataset in a separate 
+				browser tab. Return to this page to select another dataset. Once a 
+				dataset is open, you obtain more information about the dataset via the 
+				<i>Collection</i> menu. Note that the <i>ocean/carbon/socat</i> 
+				dataset is very large and may take a while to start up. Most other 
+				datasets are ready almost instantly. You can also  open a dataset by clicking
+                on the respective link in the <a href="html/dataset-summary.html" target="Dataset-summary">
+				dataset summary list</a>.
+			</p>
+			<p>
+				Private views and settings are stored in your browser, not on our server. Visit the
+                <a href="html/private-settings.html" target="ODV-online-help" >Private Settings</a>
+                page and learn how to backup and preserve your private data before deleting your browser data.
+			</p>
+    	</div>
+
+	    <div id="OceanBox" class="TreeViewBox"></div>
+	    <div id="OceanTitle" class="TreeTitle"><h2>Ocean</h2></div>
+	    <div id="OceanTree" class="TreeViewDiv">
+			<ul id="oceanTree" class="TreeView"> <%- oceanTree %> </ul>
+	    </div>
+
+	    <div id="AtmosBox" class="TreeViewBox"></div>
+	    <div id="AtmosTitle" class="TreeTitle"><h2>Atmosphere</h2></div>
+	    <div id="AtmosTree" class="TreeViewDiv">
+			<ul id="atmosTree" class="TreeView"> <%- atmosTree %> </ul>
+	    </div>
+
+	    <div id="IceBox" class="TreeViewBox"></div>
+	    <div id="IceTitle" class="TreeTitle"><h2>Ice</h2></div>
+	    <div id="IceTree" class="TreeViewDiv">
+			<ul id="iceTree" class="TreeView"> <%- iceTree %> </ul>
+	    </div>
+
+	    <div id="SedimentBox" class="TreeViewBox"></div>
+	    <div id="SedimentTitle" class="TreeTitle"><h2>Sediment</h2></div>
+	    <div id="SedimentTree" class="TreeViewDiv">
+			<ul id="sedimTree" class="TreeView"> <%- sedimTree %> </ul>
+	    </div>
+
+	    <div id="RiversBox" class="TreeViewBox"></div>
+	    <div id="RiversTitle" class="TreeTitle"><h2>Rivers</h2></div>
+	    <div id="RiversTree" class="TreeViewDiv">
+			<ul id="riversTree" class="TreeView"> <%- riversTree %> </ul>
+	    </div>
+
+	    <div id="StatusBar">
+			<%- parentLink %>
+			<span style="float:right; ">
+				<a href="html/acknowledgements.html" target="ODV-online-help" >Acknowledgements</a>
+				&ensp;|&ensp;
+				<a href="html/usage-agreement.html" target="ODV-online-help" >Usage Agreement</a>
+				&ensp;|&ensp;
+				<a href="html/private-settings.html" target="ODV-online-help" >Private Settings</a>
+				&ensp;|&ensp;
+				<a href="html/privacy-policy.html" target="ODV-online-help" >Privacy Policy</a>
+				&ensp;|&ensp;
+				<a href="html/imprint.html" target="ODV-online-help" >Imprint</a>
+				&ensp;|&ensp;
+				<a href="mailto:Reiner.Schlitzer@awi.de" target="_blank" >Contact</a>
+			</span>
+	    </div>
+	    
+	</div><!-- GridContainer -->
+
+	<script type="text/javascript">
+		let extPrms=
+		{
+			exploreRootUrl:"<%= exploreRootUrl %>", 
+			gcubeSuffix:"<%= gcubeSuffix %>",
+		};
+	</script>
+	<script type="text/javascript" src="js/explore.js"></script>
+
+	<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.awi.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '98']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</body>
+</html>

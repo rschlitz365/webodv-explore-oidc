@@ -1,0 +1,99 @@
+
+[Carbon Parameter Settings]
+EquConstants = 3
+Input Pressure [dbar] = -1e+10
+Input Temperature [deg C] = -1e+10
+Input pH_Scale = 0
+InputType = 0
+Pressure [dbar] = -1e+10
+Temperature [deg C] = -1e+10
+pH_Scale = 0
+
+[DIVA]
+BathymetryFileName = GEBCO_2014_2x2min_Global.nc
+EnforceNonnegativity = 0
+MaxDivaThreadCount = 8
+PoormanErrorFactor = 12.5
+ScaleLengthFactor = 0.75
+SignalToNoiseRatio = 50
+UseSectionBathymetryPolygon = 1
+
+[Font]
+fontItalic = 1
+fontName = Arial
+fontScaleFactor = 0.725
+fontStrikeOut = 0
+fontUnderline = 0
+fontWeight = 3
+nativePSFontName = Arial-Bold
+txtFontPtSize = 8
+
+[Gazetteer]
+GazetteerFile = GazetteerGEBCO.gzt
+GazetteerMarkerColor = 6
+GazetteerMarkerSize = 0.8
+
+[Geometry]
+Canvas-Height = 1358
+Canvas-Width = 1920
+StatDock-Width = 364
+Window-Height = 949
+Window-Left = 261
+Window-Top = 10
+Window-Width = 1618
+showMaximized = 0
+
+[Highlighting]
+
+[Import]
+CNVBinAveragingBinSize = 1
+CNVDoBinAveraging = 0
+CNVDoSplitUpDownCasts = 1
+StationBreakPositionTolerance = 0.1
+StationBreakTimeTolerance = 1
+WODShortCruiseLabels = 1
+
+[Ocean Calculator]
+
+[Printing]
+ImageDPI = 300
+
+[Program Commands]
+BrowserCommand = C:/Program Files (x86)/Google/Chrome/Application/chrome.exe
+ViewerCommand = notepad
+
+[Recent]
+SdnExportDir = C:/Users/rschlitz/_my/ODV/data/sdn
+
+[Recent DlgShows]
+MsgNoValidStation = 2024-03-11T14:44:07
+
+[Recent Files]
+File0 = C:/Users/rschlitz/_my/websites/explore/data/ocean/satellite/chlorophyll/mean_Chlo_2003_2019.nc
+
+[Setup]
+CheckForUpdatesDate = 2023-02-17T10:26:16
+ExtraSidebarURL1 = C:/Users/rschlitz/_my/ODV/data
+ExtraSidebarURL2 =
+GObjectDir = C:/Users/rschlitz/Desktop/
+ImageDPI = 300
+InstallCopyVersion = 5.6.3.8
+ODVHOME = C:/Programs/Ocean Data View/
+ODVHOST = BGEO05P110
+ODVUSER = rschlitz
+ODVUserDir = C:/Users/rschlitz/_my/ODV/
+
+[Utility Files]
+Etopo2File = C:/Users/rschlitz/_my/ODV/bathymetry/ETOPO1_6x6min_Global.nc
+Gebco1File = C:/Users/rschlitz/_my/ODV/bathymetry/GEBCO_2023_6x6min_Global.nc
+
+[WebODV]
+ExportRootDir = C:/Users/rschlitz/_my/ODV/export/web/
+ServerRootDir = C:/develop/webodv-explore-oidc/server/
+
+[Website]
+FileRootURL = https://odv.awi.de/fileadmin/user_upload/odv/
+URL = https://odv.awi.de
+VocabRootURL = http://vocab.nerc.ac.uk/collection/
+
+[Websockets]

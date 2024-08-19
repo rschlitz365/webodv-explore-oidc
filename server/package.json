@@ -1,0 +1,29 @@
+{
+  "name": "appmgr",
+  "version": "1.0.0",
+  "description": "ODV-online server including a odvws application manager",
+  "main": "app.js",
+  "dependencies": {
+    "connect-ensure-login": "^0.1.1",
+    "connect-sqlite3": "^0.9.15",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.17.1",
+    "express-session": "^1.18.0",
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-openidconnect": "^0.1.2",
+    "ws": "^7.2.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reiner Schlitzer <Reiner.Schlitzer@awi.de>",
+  "license": "ISC",
+  "optionalDependencies": {
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": "^5.0.2"
+  }
+}

@@ -1,0 +1,260 @@
+:root
+{
+    --page-bck-color: rgb(86, 116, 146);
+    --appborder-color: #ccc;
+    --page-text-color: #eaeaea;
+    --treeview-title-color: rgb(43, 65, 65);
+    --treeview-text-color: #555;
+    --item-hover-color: rgb(135, 179, 237);
+}
+
+body
+{
+    margin: 10px 40px 0px 40px;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+    line-height: 1.35;
+    font-size: 16px;
+    color:var(--page-text-color);
+    background-color: var(--page-bck-color);
+}
+
+h1
+{ color: var(--page-text-color); }
+
+h2 
+{ color: var(--treeview-title-color); }
+
+a, a:link, a:visited, a:active 
+{ color: var(--page-text-color); }
+
+a:hover
+{ color: var(--item-hover-color); }
+
+#GridContainer
+{
+    display: grid; 
+    height: 100%; 
+    width: 100%;
+    grid-gap: 20px 25px;
+    grid-template-columns: [cl0] 0px [cl1] 1.25fr [cl2] 1fr [cl3] 1fr [cl4] 0px [cl5];
+    grid-template-rows:  [rl0] 80px [rl1] 1fr [rl2] 22px [rl3] 200px [rl4] 22px [rl5] 200px [rl6] 20px [rl7];
+}
+
+#TitleBar
+{
+    grid-column: cl0 / cl2; 
+    grid-row: rl0 / rl2;
+    background-image: url("../img/explore-logo.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#TextBody
+{
+    grid-column: cl2 / cl5; 
+    grid-row: rl0 / rl2; 
+    padding: 6px 0px 0px 0px;
+}
+
+#OceanBox
+{
+    grid-column: cl0 / cl2; 
+    grid-row: rl2 / rl6; 
+    background-image: url("../img/ocean.jpg");
+    background-size: auto 100%;
+    border:solid var(--appborder-color) 1px;
+}
+
+#OceanTitle
+{
+    grid-column: cl0 / cl2; 
+    grid-row: rl2 / rl3; 
+}
+
+#OceanTree
+{
+    grid-column: cl0 / cl2; 
+    grid-row: rl3 / rl6; 
+}
+
+#AtmosBox
+{
+    grid-column: cl2 / cl3; 
+    grid-row: rl2 / rl4; 
+    background-image: url("../img/atmos.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:solid var(--appborder-color) 1px;
+}
+
+#AtmosTitle
+{
+    grid-column: cl2 / cl3; 
+    grid-row: rl2 / rl3; 
+}
+
+#AtmosTree
+{
+    grid-column: cl2 / cl3; 
+    grid-row: rl3 / rl4; 
+}
+
+#IceBox
+{
+    grid-column: cl3 / cl5; 
+    grid-row: rl2 / rl4; 
+    background-image: url("../img/ice.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:solid var(--appborder-color) 1px;
+}
+
+#IceTitle
+{
+    grid-column: cl3 / cl5; 
+    grid-row: rl2 / rl3; 
+}
+
+#IceTree
+{
+    grid-column: cl3 / cl5; 
+    grid-row: rl3 / rl4; 
+}
+
+#SedimentBox
+{
+    grid-column: cl3 / cl5; 
+    grid-row: rl4 / rl6; 
+    background-image: url("../img/sedim.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:solid var(--appborder-color) 1px;
+}
+
+#SedimentTitle
+{
+    grid-column: cl3 / cl5; 
+    grid-row: rl4 / rl5; 
+}
+
+#SedimentTree
+{
+    grid-column: cl3 / cl5; 
+    grid-row: rl5 / rl6; 
+}
+
+#RiversBox
+{
+    grid-column: cl2 / cl3; 
+    grid-row: rl4 / rl6; 
+    background-image: url("../img/rivers.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:solid var(--appborder-color) 1px;
+}
+
+#RiversTitle
+{
+    grid-column: cl2 / cl3; 
+    grid-row: rl4 / rl5; 
+}
+
+#RiversTree
+{
+    grid-column: cl2 / cl3; 
+    grid-row: rl5 / rl6; 
+}
+
+#StatusBar
+{
+    grid-column: cl0 / cl5; 
+    grid-row: rl6 / rl7; 
+    font-size: 14px;
+}
+
+
+/**** trees ****/
+
+.TreeViewBox
+{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+
+.TreeTitle
+{
+    font-size: 16px;
+    padding: 0px 0px 16px 16px;
+    margin: -12px 0px 0px 0px;
+}
+
+.TreeViewDiv
+{
+    overflow-y: auto;
+}
+
+.TreeView
+{
+    font-size: 16px;
+    color:var(--treeview-text-color);
+    -padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px -14px;
+}
+
+.TreeView li
+{
+    padding: 3px 0 3px 0;
+    cursor: pointer; 
+}
+
+.TreeView, .tree-nested-list
+{
+    list-style-type: none;
+}
+
+.TreeView li.tree-item-node
+{
+    font-style: italic;
+}
+
+.TreeView li.tree-item-node:hover
+{
+    color: var(--treeview-title-color);
+}
+
+.tree-group-node
+{
+    font-weight: bold;
+    cursor: pointer; 
+    user-select: none;
+}
+
+.tree-group-node::before
+{
+    display: inline-block;
+    content: "\203A";
+    margin-right: 6px;
+}
+
+.tree-group-node-open::before
+{
+    transform: rotate(90deg); 
+}
+
+.tree-item-node
+{
+    margin-right: 10px;
+    cursor: pointer; 
+}
+
+.tree-nested-list
+{
+    display: none;
+}
+
+.tree-nested-list-open
+{
+    margin-left: -20px;
+    display: block;
+}

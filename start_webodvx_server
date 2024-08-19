@@ -1,0 +1,21 @@
+#!/bin/sh -f
+
+# script to start the webODV Explore server
+
+# � 2024 Reiner Schlitzer,
+#        Alfred Wegener Institute,
+#        Bremerhaven, Germany
+#        Reiner.Schlitzer@awi.de
+
+
+#---------start apache2-----------------#
+/usr/sbin/apache2ctl start &
+#---------start apache2-----------------#
+
+#---------start Xvfb-----------------#
+Xvfb :102 -screen 0 3840x2160x24 -nolisten tcp -nolisten unix &
+export DISPLAY=:102.0
+#---------start Xvfb-----------------#
+
+#cd ./server
+node ./server/app.js

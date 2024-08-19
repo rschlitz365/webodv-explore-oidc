@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Explore Private Settings</title>
+    <link rel="stylesheet" href="../css/explore.css">
+    <link rel="shortcut icon" type="image/gif" href="../img/odv-icon.gif">
+  </head>
+
+  <body>
+      
+      <h1>Private Settings</h1>
+
+      <p>Private views and settings are stored in your browser's data,
+      not on our server. Normally, such private content is lost when
+      you delete your browser data.</p>
+          
+      <p>To avoid loss of your private settings press the <i>Save
+      Settings</i> button before deleting the browser's data.
+      After you deleted your browser data, select the saved settings
+      file under <i>Restore Settings</i> to restore your private
+      settings. Check the <i>Delete existing settings before
+      restoring</i> to delete the existing private settings before
+      restoring from the file.</p>
+      <p>&emsp;</p>
+	  <p>
+        <button onClick="onBtnSave();">Save Settings</button>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <label for="fileSelectorR">Restore Settings:</label>
+        <input type="file" id="fileSelectorR"/>
+        &emsp;
+        <input type="checkbox" id="deleteCb"/>
+        <label for="deleteCb">Delete existing settings before restoring</label>
+      </p>
+      
+	<script type="text/javascript" src="../js/private-settings.js"></script>
+  </body>
+</html>

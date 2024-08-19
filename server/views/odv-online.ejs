@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title><%= collectionName %></title>
+	<link rel="stylesheet" href="<%= staticFilePathPrefix %>css/odv-online.min.css">
+	<link rel="shortcut icon" type="image/gif" href="<%= staticFilePathPrefix %>img/odv-icon.gif">
+    </head>
+    
+    <body>
+	<noscript>Your browser does not support JavaScript!</noscript>
+
+	<div id="PopupBckgrd">
+	</div> <!-- PopupBckgrd -->
+
+	<div id="GridContainer">
+
+	    <div id="ControlBlock">
+	    </div> <!-- ControlBlock -->
+
+	    <div id="TitleBar">
+	    </div>
+	    
+	    <div id="CanvasContainer">
+		<img id="ImageArea">
+		<canvas id="CanvasArea"></canvas>
+	    </div> <!-- CanvasContainer -->
+
+	    <div id="CurrStatListTitleBar">
+	    </div>
+
+	    <div id="CurrStatList">
+	    </div>
+
+	    <div id="CurrSmplListTitleBar">
+	    </div>
+
+	    <div id="CurrSmplList">
+	    </div>
+
+	    <div id="CurrIsoVarListTitleBar">
+		<div id="CurrIsoVarListTitleBarInfoPane" class="LbPane"></div>
+	    </div>
+
+	    <div id="CurrIsoVarList">
+	    </div>
+
+	    <div id="StatusBar">
+	    </div>
+	    
+	</div><!-- GridContainer -->
+
+	<script type="text/javascript">
+		let extPrms=
+		{
+			collectionName:"<%= collectionName %>", 
+			collDescription:"<%= collectionDescription %>",
+			initialView:"<%= initialView %>",
+            isDevEnvironment:false,
+			resourceRoot:"<%= staticFilePathPrefix %>",
+            returnUrl:"<%= rootUrl %>",
+			sessionId:"<%= sessionId %>",
+			serverVersion:"<%= serverVersion %>",
+            wsUri:"<%= wsUri %>"
+		};
+	</script>
+	<script type="text/javascript" src="<%= staticFilePathPrefix %>js/odv-online.min.js"></script>
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.awi.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '98']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+    </body>
+</html>
