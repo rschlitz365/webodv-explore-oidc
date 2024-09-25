@@ -1,6 +1,7 @@
 .env
-.vscode
-doc
-server/node_modules
-server/var
-settings/.env*
+./.vscode
+./backups
+./doc
+./server/node_modules
+./server/var
+./settings/.env*
