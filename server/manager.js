@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2020-2024 Reiner Schlitzer (Reiner.Schlitzer@awi.de).
+** Copyright (C) 2020-2025 Reiner Schlitzer (Reiner.Schlitzer@awi.de).
 ** All rights reserved.
 **
 ** This file is part of webODV Explore.
