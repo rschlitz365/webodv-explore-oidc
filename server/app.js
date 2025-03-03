@@ -28,28 +28,32 @@ const logger=require('morgan');
 const passport=require('passport');
 const SQLiteStore=require('connect-sqlite3')(session);
 const OpenIDConnectStrategy=require('passport-openidconnect');
+
 passport.use(new OpenIDConnectStrategy(
-{
-  issuer: process.env.OIDC_ISSUER,
-  authorizationURL: process.env.OIDC_AUTHORIZATION_ENDPOINT,
-  tokenURL: process.env.OIDC_TOKEN_ENDPOINT,
-  userInfoURL: process.env.OIDC_USERINFO_ENDPOINT,
-  clientID: process.env.OIDC_CLIENT_ID,
-  clientSecret: process.env.OIDC_CLIENT_SECRET,
-  callbackURL: process.env.OIDC_REDIRECT_URI,
-},
-(issuer,profile,done) => {
-  //let prof=profile;
-  return done(null,profile);
-}
+  {
+    issuer: process.env.OIDC_ISSUER,
+    authorizationURL: process.env.OIDC_AUTHORIZATION_ENDPOINT,
+    tokenURL: process.env.OIDC_TOKEN_ENDPOINT,
+    userInfoURL: process.env.OIDC_USERINFO_ENDPOINT,
+    clientID: process.env.OIDC_CLIENT_ID,
+    clientSecret: process.env.OIDC_CLIENT_SECRET,
+    callbackURL: process.env.OIDC_REDIRECT_URI,
+  },(issuer,profile,done) =>
+    {
+      //let prof=profile;
+      return done(null,profile);
+    }
 ));
+
 passport.serializeUser(function(user,cb)
-{
-  process.nextTick(function()
-  { cb(null, { id: user.id, username: user.username, name: user.displayName, email: user.emails[0].value }); });
-});
+  {
+    process.nextTick(function()
+    { cb(null, { id: user.id, username: user.username, name: user.displayName, email: user.emails[0].value }); });
+  });
+
 passport.deserializeUser(function(user,cb)
-{ process.nextTick(function() { return cb(null,user); }); });
+  { process.nextTick(function() { return cb(null,user); }); });
+
 const ensureLogIn=require('connect-ensure-login').ensureLoggedIn;
 const ensureLoggedIn=ensureLogIn();
 // OIDC end
@@ -81,13 +85,13 @@ app.use(session(
 app.use(csrf());
 app.use(passport.authenticate('session'));
 app.use(function(req,res,next)
-{
-  let msgs=req.session.messages || [];
-  res.locals.messages=msgs;
-  res.locals.hasMessages=!! msgs.length;
-  req.session.messages=[];
-  next();
-});
+  {
+    let msgs=req.session.messages || [];
+    res.locals.messages=msgs;
+    res.locals.hasMessages=!! msgs.length;
+    req.session.messages=[];
+    next();
+  });
 app.use(function(req,res,next)
   { res.locals.csrfToken=req.csrfToken(); next(); });
 // oidc end
@@ -99,41 +103,41 @@ app.use(express.static(path.join(__dirname,'public')));
 
 /* ...handle Explore root page */
 app.get('/',ensureLoggedIn,(req,res) =>
-{
-  res.render('explore',{ oceanTree: datasets.oceanTree,
-    atmosTree: datasets.atmosTree, riversTree: datasets.riversTree,
-    iceTree: datasets.iceTree, sedimTree: datasets.sedimTree,
-    parentLink: cf.parentLink, exploreRootUrl: process.env.EXPLORE_ROOT_URL,
-    gcubeSuffix: gcubeSuffix });
-});
+  {
+    res.render('explore',{ oceanTree: datasets.oceanTree,
+      atmosTree: datasets.atmosTree, riversTree: datasets.riversTree,
+      iceTree: datasets.iceTree, sedimTree: datasets.sedimTree,
+      parentLink: cf.parentLink, exploreRootUrl: process.env.EXPLORE_ROOT_URL,
+      gcubeSuffix: gcubeSuffix });
+  });
 
 /* ...handle login process */
 app.get('/login', passport.authenticate('openidconnect'));
 
 /* ...finalize login process */
 app.get('/callback',passport.authenticate('openidconnect',
-	// { successReturnToOrRedirect: `/${gcubeSuffix}`,
-	{ successReturnToOrRedirect: '/',
-	  failureRedirect: '/login' }));
+  // { successReturnToOrRedirect: `/${gcubeSuffix}`,
+  { successReturnToOrRedirect: '/',
+    failureRedirect: '/login' }));
 
 /* ...handle signin page */
 app.get('/signin',(req,res,next) => { res.render('signin'); });
 
 /* ...handle status page */
 app.get('/status',ensureLoggedIn,(req,res,next) =>
-{
-  if (req.user.username=='reiner.schlitzer')
   {
-    let status=mgr.getStatus();
-    let usageFilePath=mgr.getUsageInfo(datasets.datasetArr);
-    res.render('status',{ statusStr: status.str, usedPorts: status.usedPorts.toString(),
-      isLocalHost: status.isLocalHost, downloadFilePath: usageFilePath,
-      sessionId: process.env.EXPLORE_ADMIN_PASSWORD,
-      wsUriBase: process.env.EXPLORE_WSURI_BASE});
-  }
-   else
-    next(createError(403));
-});
+    if (req.user.username=='reiner.schlitzer')
+      {
+        let status=mgr.getStatus();
+        let usageFilePath=mgr.getUsageInfo(datasets.datasetArr);
+        res.render('status',{ statusStr: status.str, usedPorts: status.usedPorts.toString(),
+          isLocalHost: status.isLocalHost, downloadFilePath: usageFilePath,
+          sessionId: process.env.EXPLORE_ADMIN_PASSWORD,
+          wsUriBase: process.env.EXPLORE_WSURI_BASE});
+      }
+    else
+      next(createError(403));
+  });
 
 /* ...handle explore data session requests */
 app.get(['/atmosphere/*', '/ice/*', '/ocean/*', '/rivers/*', '/sediment/*'],
@@ -149,17 +153,17 @@ app.use((req,res,next) => { next(createError(404)); });
 
 /* ...error handler */
 app.use((err,req,res,next) =>
-{
-  //const dt=new Date(); console.log(dt.toISOString()+'  '+err.message);
+  {
+    //const dt=new Date(); console.log(dt.toISOString()+'  '+err.message);
 
-  /* set locals, only providing error in development */
-  res.locals.message=err.message;
-  res.locals.error=req.app.get('env') === 'development' ? err : {};
+    /* set locals, only providing error in development */
+    res.locals.message=err.message;
+    res.locals.error=req.app.get('env') === 'development' ? err : {};
 
-  /* render the error page */
-  res.status(err.status || 500);
-  res.render('error');
-});
+    /* render the error page */
+    res.status(err.status || 500);
+    res.render('error');
+  });
 /* ...MIDDLEWARE END */
 
 app.listen(3000,() =>
@@ -168,10 +172,11 @@ app.listen(3000,() =>
 
 /**************************************************************************/
 function renderOdvOnlinePage(req,res,userName,sessionIdent,collName,collDescr,
-  wsUrl,staticPathPrefix,view,exploreRootUrl,serverVersion)
+                             wsUrl,staticPathPrefix,view,exploreRootUrl,
+                             serverVersion)
 /**************************************************************************/
 {
-   res.render('odv-online',{ collectionName: collName,
+  res.render('odv-online',{ collectionName: collName,
     collectionDescription: collDescr,
     sessionId: sessionIdent, userId: userName, initialView: view,
     staticFilePathPrefix: staticPathPrefix, wsUri: wsUrl,
@@ -186,7 +191,7 @@ function retrieveGcubeToken(req,res,next)
   let gct=(req.hasOwnProperty('query') &&
            req.query.hasOwnProperty('gcube-token')) ?
     req.query.gcube-token : undefined;
-  gcubeSuffix= gct ? `?gcube-token=${gct}` : '';
+  gcubeSuffix=gct ? `?gcube-token=${gct}` : '';
   next();
 }
 
